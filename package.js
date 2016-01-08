@@ -1,6 +1,6 @@
 Package.describe({
     name: 'nerdmed:sweet-alert',
-    version: '1.0.0',
+    version: '1.0.1',
 
     // Brief, one-line summary of the package.
     summary: 'Just raw sweet alert 2 lib',
@@ -14,5 +14,6 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
+    api.addFiles('sweet-alert.css', 'client');
     api.addFiles('sweet-alert.js', 'client');
 });
