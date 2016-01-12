@@ -403,6 +403,7 @@
     function handleKeyDown(event) {
       var e = event || window.event;
       var keyCode = e.keyCode || e.which;
+      var modalIsVisible = hasClass(modal, 'visible');
 
       if ([9,13,32,27].indexOf(keyCode) === -1) {
         // Don't do work on keys we don't care about.
@@ -421,6 +422,12 @@
 
       if (keyCode === 9) {
         // TAB
+
+        // Should only happen if modal is visible
+        if (!modalIsVisible) {
+          return;
+        }
+
         if (btnIndex === -1) {
           // No button focused. Jump to the confirm button.
           $targetElement = $confirmButton;
@@ -759,7 +766,7 @@
     // Remove dynamically created media query
     var head = document.getElementsByTagName('head')[0];
     var mediaquery = document.getElementById(mediaqueryId);
-    head.removeChild(mediaquery);
+    if(mediaquery) head.removeChild(mediaquery);
   }
 
   /*

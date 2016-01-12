@@ -1,6 +1,6 @@
 Package.describe({
     name: 'nerdmed:sweet-alert',
-    version: '1.0.1',
+    version: '1.0.2',
 
     // Brief, one-line summary of the package.
     summary: 'Just raw sweet alert 2 lib',
